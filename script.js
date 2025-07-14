@@ -1,3 +1,4 @@
+// Exercise A
 function fibs(n) {
     if (n == 0) {return []} 
     if (n == 1) {return [0]} 
@@ -29,8 +30,7 @@ function fibsRec(n) {
     return fibArr
 }
 
-// script
-console.log("for-loop")
+/* console.log("for-loop")
 console.log(fibs(0))
 console.log(fibs(1))
 console.log(fibs(2))
@@ -46,4 +46,23 @@ console.log(fibsRec(2))
 console.log(fibsRec(3))
 console.log(fibsRec(4))
 console.log(fibsRec(5))
-console.log(fibsRec(10))
+console.log(fibsRec(10)) */
+
+// Exercise B
+function mergeSort(array) {
+    const sortAB = ([A, B]) => {
+        return A > B ? [B, A] : [A, B]
+    } 
+
+    x = array.slice(-2)
+    if (array.length == 2) {
+        return sortAB(x)
+    } 
+    
+    return 
+}
+
+
+console.log(mergeSort([3, 2, 1, 13, 8, 5, 0, 1]))
+console.log(mergeSort([105, 79, 100, 110]))
+console.log(mergeSort([2,1,1]))
