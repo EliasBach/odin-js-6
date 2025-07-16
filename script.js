@@ -30,14 +30,14 @@ function fibsRec(n) {
     return fibArr
 }
 
-/* console.log("for-loop")
+console.log("for-loop")
 console.log(fibs(0))
 console.log(fibs(1))
 console.log(fibs(2))
 console.log(fibs(3))
 console.log(fibs(4))
 console.log(fibs(5))
-console.log(fibs(10))
+console.log(fibs(8))
 
 console.log("recursive")
 console.log(fibsRec(0))
@@ -46,23 +46,35 @@ console.log(fibsRec(2))
 console.log(fibsRec(3))
 console.log(fibsRec(4))
 console.log(fibsRec(5))
-console.log(fibsRec(10)) */
+console.log(fibsRec(8))
 
 // Exercise B
-function mergeSort(array) {
-    const sortAB = ([A, B]) => {
-        return A > B ? [B, A] : [A, B]
-    } 
+//function to sort the given array
+function mergeSort(arr) {
+    if (arr.length <= 1) {
+       return arr;
+    }
+    const mid = Math.floor(arr.length / 2);
+    const left = arr.slice(0, mid);
+    const right = arr.slice(mid);
+    return merge(mergeSort(left), mergeSort(right));
+ }
+  
+ //function to merge the left and right elements
+ function merge(left, right) {
+    const result = [];
+     
+    while (left.length && right.length) {
+       if (left[0] < right[0]) {
+          result.push(left.shift());
+       } else {
+          result.push(right.shift());
+       }
+    }
+     
+    return [...result, ...left, ...right];
+ }
 
-    x = array.slice(-2)
-    if (array.length == 2) {
-        return sortAB(x)
-    } 
-    
-    return 
-}
-
-
+ console.log("mergeSort")
 console.log(mergeSort([3, 2, 1, 13, 8, 5, 0, 1]))
 console.log(mergeSort([105, 79, 100, 110]))
-console.log(mergeSort([2,1,1]))
